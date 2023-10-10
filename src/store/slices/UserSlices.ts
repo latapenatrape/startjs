@@ -1,0 +1,24 @@
+import {createSlice, PayloadAction} from "@reduxjs/toolkit";
+interface UserSlice {
+    login: string
+    password: string
+}
+const initialState: UserSlice = {
+    login: '',
+    password: '',
+}
+
+
+export const userSlice = createSlice({
+    name: 'user',
+    initialState,
+    reducers:{
+        loginSucces(state, action: PayloadAction<any>){
+            state.logiun = action.payload.login
+            state.password = action.payload.password
+        },
+    }
+}
+
+)
+export default userSlice.reducer
